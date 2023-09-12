@@ -60,6 +60,9 @@ $ yarn run start:dev
 
 # production mode
 $ yarn run start:prod
+
+# Application will be running on PORT 3000
+$ http://localhost:3000 => BASE_URL
 ```
 
 
