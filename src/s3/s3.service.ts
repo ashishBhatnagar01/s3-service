@@ -24,7 +24,11 @@ export class S3Service {
     data: CreateBucketDTO,
     @User() user: UserInterface,
   ): Promise<{ status: boolean }> {
-
+    const doesBucket = fs.existsSync(path.join(process.cwd(), 'buckets'));
+    if (!doesBucket)
+      fs.mkdir(path.join(process.cwd(), 'buckets'), (err) => {
+        if (err) throw new HttpException(err.message, 400);
+      });
     fs.mkdir(path.join(process.cwd(), 'buckets', data.bucket_name), (err) => {
       if (err) throw new HttpException(err.message, 400);
     });

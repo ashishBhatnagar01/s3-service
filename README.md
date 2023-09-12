@@ -24,12 +24,29 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+S3-replica services without using S3
 
-## Installation
+## Setting up the project
 
 ```bash
+Clone the repository
+
+$ git clone https://github.com/ashishBhatnagar01/s3-service.git
+
+Navigate to root directory
+
+$ cd s3-service
+
+Installing dependencies
+
 $ yarn install
+
+Add .env file in the root directory (REFER TO .env.example)
+
+Sync the DB with schema.prisma file
+
+$ npx prisma db seed
+
 ```
 
 ## Running the app
@@ -45,28 +62,10 @@ $ yarn run start:dev
 $ yarn run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ yarn run test
-
-# e2e tests
-$ yarn run test:e2e
-
-# test coverage
-$ yarn run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
 ## Stay in touch
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+- Author - [Ashish Bhatnagar](https://github.com/ashishBhatnagar01)
 
 ## License
 
