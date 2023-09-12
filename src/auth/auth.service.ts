@@ -5,18 +5,18 @@ import { users } from '@prisma/client';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import * as process from 'process';
-import { ErrorMessages } from '../../utils/messages/error.messages';
+import { CustomMessages } from '../../utils/messages/custom.messages';
 import e from 'express';
 @Injectable()
 export class AuthService {
   constructor(
     private prisma: PrismaService,
     private jwtService: JwtService,
-    private errorMessages: ErrorMessages,
+    private errorMessages: CustomMessages,
   ) {}
 
   async createUser(body: SignUpDTO): Promise<string> {
-    body.password = await bcrypt.hashPassword(body.password, 10);
+    body.password = await bcrypt.hash(body.password, 10);
     const user = await this.prisma.users.create({
       data: body,
     });

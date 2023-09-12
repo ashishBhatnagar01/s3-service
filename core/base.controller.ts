@@ -1,7 +1,7 @@
 export class BaseController {
   standardResponse(
     data,
-    message = 'Resource Created/Updated Successfully',
+    message = 'Success',
     httpStatus = 200,
   ) {
     return {
